@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TimerContainer {
+  width: max-content;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 5fr 1fr;
+  gap: 14px 7px;
+  grid-template-areas:
+    "Timer Timer"
+    "Input Button";
+  font-size: 56px;
+  color: #888888;
+}
+
+#Timer {
+  width: 100%;
+  padding: 20px;
+  aspect-ratio: 1;
+  grid-area: Timer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+#TimerInput {
+  grid-area: Input;
+  height: 30px;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+#TimerInput:hover,
+#TimerInput:active,
+#TimerInput:focus,
+#TimerInput:focus-within,
+#TimerInput:focus-visible,
+#TimerInput:target {
+  border-color: #a7a6a6;
+}
+
+#TimerButton {
+  grid-area: Button;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  background-color: #888888;
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+#TimerButton:hover {
+  background-color: #a7a6a6;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
